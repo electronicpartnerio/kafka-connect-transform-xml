@@ -64,20 +64,15 @@
         <url>https://github.com/jcustenborder/kafka-connect-transform-xml/issues</url>
     </issueManagement>
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.github.jcustenborder.kafka.connect</groupId>-->
-<!--            <artifactId>kafka-connect-transform-common</artifactId>-->
-<!--            <version>[0.1.0.1, 0.1.0.1000]</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.github.jcustenborder.kafka.connect</groupId>
             <artifactId>xjc-kafka-connect-plugin</artifactId>
-            <version>[0.0.1.1, 0.0.1.1000]</version>
+            <version>[0.2.0, 0.2.1000]</version>
         </dependency>
         <dependency>
             <groupId>com.github.jcustenborder.kafka.connect</groupId>
             <artifactId>kafka-connect-xml</artifactId>
-            <version>[0.0.1.1, 0.0.1.1000]</version>
+            <version>[0.2.0, 0.2.1000]</version>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -95,35 +90,10 @@
             <version>2.3.0</version>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.confluent</groupId>
-                <artifactId>kafka-connect-maven-plugin</artifactId>
-                <version>0.11.2</version>
-                <executions>
-                    <execution>
-                        <id>hub</id>
-                        <goals>
-                            <goal>kafka-connect</goal>
-                        </goals>
-                        <configuration>
-                            <confluentControlCenterIntegration>true</confluentControlCenterIntegration>
-                            <documentationUrl>https://jcustenborder.github.io/kafka-connect-documentation/projects/kafka-connect-transform-xml/</documentationUrl>
-                            <componentTypes>
-                                <componentType>transform</componentType>
-                            </componentTypes>
-                            <tags>
-                                <tag>Transform</tag>
-                                <tag>Xml</tag>
-                            </tags>
-                            <title>Xml Transformation</title>
-                            <supportUrl>${pom.issueManagement.url}</supportUrl>
-                            <supportSummary>Support provided through community involvement.</supportSummary>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
 </project>
