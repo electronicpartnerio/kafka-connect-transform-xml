@@ -1,0 +1,21 @@
+name: Npm publish
+on:
+  workflow_dispatch:
+    inputs:
+      semantic_version_type:
+        description: "Semantic version type"
+        type: string
+        required: true
+
+      port_context:
+        required: true
+        description: "Details about the action and general context (blueprint, run id, etc...)"
+        type: string
+
+jobs:
+  callNpmPublishAction:
+    uses: electronicpartnerio/github-actions/.github/workflows/npm-publish.yaml@main
+    with:
+      semantic_version_type: ${{ inputs.semantic_version_type }}
+      port_context: ${{ inputs.port_context }}
+    secrets: inherit
